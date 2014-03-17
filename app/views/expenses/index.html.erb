@@ -1,0 +1,55 @@
+<h1>Listing expenses</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= sortable "user_id", "User" %></th>
+      <th><%= sortable "date" %></th>
+      <th><%= sortable "reseller" %></th>
+      <th><%= sortable "item_or_service", "Item or service" %></th>
+      <th><%= sortable "payment_form", "Payment form" %></th>
+      <th><%= sortable "charged_to", "Charged to" %></th>
+      <th><%= sortable "cost" %></th>
+      <th><%= sortable "amount_from_budget", "Amount from budget" %></th>
+      <th><%= sortable "notes" %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= expense.user_id %></td>
+        <td><%= expense.date %></td>
+        <td><%= expense.reseller %></td>
+        <td><%= expense.item_or_service %></td>
+        <td><%= expense.payment_form %></td>
+        <td><%= expense.charged_to %></td>
+        <td><%= expense.cost %></td>
+        <td><%= expense.amount_from_budget %></td>
+        <td><%= expense.notes %></td>
+        <td><%= link_to 'Show', expense %></td>
+        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  <%= will_paginate %>
+<br>
+
+<p><%= "The total amount spend from budget so far is $#{Expense.sum(:amount_from_budget)}" %></p>
+
+<p><%= "The total budget for this year is $#{Configurable.total_budget}." %></p>
+
+<p><%= "This means, we have $#{Configurable.total_budget.to_f - Expense.sum(:amount_from_budget)} left to spend!" %></p>
+
+
+<button id="import-button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#import-modal">Import Exepnses</button>
+
+<%= link_to 'New Expense', new_expense_path, class: 'btn btn-primary btn-large' %>
+
+
+<%= render 'modals' %>

@@ -1,0 +1,16 @@
+<div id="import-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h2 class="modal-title">Import Expenses</h2>
+      </div>
+      <div class="modal-body">
+        <%= form_tag import_expenses_path, multipart: true do %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @expense.user_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @expense.date %>
+</p>
+
+<p>
+  <strong>Reseller:</strong>
+  <%= @expense.reseller %>
+</p>
+
+<p>
+  <strong>Item or service:</strong>
+  <%= @expense.item_or_service %>
+</p>
+
+<p>
+  <strong>Payment form:</strong>
+  <%= @expense.payment_form %>
+</p>
+
+<p>
+  <strong>Charged to:</strong>
+  <%= @expense.charged_to %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @expense.cost %>
+</p>
+
+<p>
+  <strong>Amount from budget:</strong>
+  <%= @expense.amount_from_budget %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @expense.notes %>
+</p>
+
+<% if @expense.document %>
+<p>
+  <strong>Document:</strong>
+  <%= link_to "File", root_url.chop + @expense.document.url %>
+</p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_expense_path(@expense) %> |
+<%= link_to 'Back', expenses_path %>
