@@ -1,0 +1,46 @@
+<nav class="navbar" role="navigation">
+    <ul class="nav nav-sidebar">
+      <li>
+        <a class="sidebar-brand" href="/"><%= "#{Configurable.site_title}" %></a>
+      </li>
+    	<% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <li>
+            <%= link_to admin_configurable_path do %>
+              <i class="fa fa-cogs"></i>
+              <span>Administrative Settings</span>
+            <% end %> 
+          <li>
+            <%= link_to users_index_path do %>
+              <i class="fa fa-users"></i>
+              <span>User Account Settings</span>
+            <% end %>
+          </li>
+          <hr>
+        <% end %>
+         <li>
+            <%= link_to new_expense_path do %>
+              <i class="fa fa-plus-square-o"></i>
+              <span>Add New Expense</span>
+            <% end %>
+          </li>
+     
+        <li>
+          <%= link_to expenses_path do %>
+              <i class="fa fa-list"></i>
+              <span>Show All Expenses</span>
+          <% end %>
+        </li>
+
+        <li>
+          <a href="#" id="import-button" data-toggle="modal" data-target="#import-modal"><i class="fa fa-external-link-square"></i> Import Expenses</a>
+        </li>
+
+
+        <hr>
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <% end %>
+    </ul>
+	</div>
+</nav>
+	
