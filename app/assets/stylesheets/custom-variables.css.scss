@@ -16,9 +16,9 @@ $gray-lighter:           lighten(#000, 93.5%); // #eee
 // Brand colors
 // -------------------------
 
-$brand-primary:         #53A3C6;
-$brand-success:         #7DD4B7;
-$brand-warning:         #3B2673;
+$brand-primary:         #3BB087;
+$brand-success:         #38A3A8;
+$brand-warning:         #D07C71;
 $brand-danger:          #C44F65;
 $brand-info:            #000;
 
@@ -38,9 +38,10 @@ $link-hover-color:      darken($link-color, 15%);
 // -------------------------
 
 $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif-alt: "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
-$font-family-base:        $font-family-serif;
+$font-family-base:        $font-family-sans-serif-alt;
 
 $font-size-base:          18px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
@@ -251,7 +252,7 @@ $grid-columns:              12;
 // Padding, to be divided by two and applied to the left and right of all columns
 $grid-gutter-width:         30px;
 // Point at which the navbar stops collapsing
-$grid-float-breakpoint:     1920px;
+$grid-float-breakpoint:     $screen-tablet;
 
 
 // Navbar

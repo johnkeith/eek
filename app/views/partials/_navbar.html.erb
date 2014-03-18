@@ -14,7 +14,7 @@
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav navbar-right">
     	<% if user_signed_in? %>
-        <li><%= link_to "You are #{current_user.email}" %></li>
+        
         <% if current_user.admin? %>
           <li><%= link_to "Administrative Settings", admin_configurable_path %> 
           <li><%= link_to "User Account Settings", users_index_path %></li>

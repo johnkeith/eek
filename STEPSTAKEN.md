@@ -453,3 +453,8 @@ dealing with admin signup redirect
   end
 
   NEED TO ADD NOTICE
+
+
+  Doing good work on the css - added custom fonts, figured out how to make the menu default to collapsed state
+
+Now working on adding some custom layouts for certain pages using the bootstrap formating

@@ -46,10 +46,11 @@
 
 <p><%= "This means, we have $#{Configurable.total_budget.to_f - Expense.sum(:amount_from_budget)} left to spend!" %></p>
 
-
-<button id="import-button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#import-modal">Import Exepnses</button>
-
 <%= link_to 'New Expense', new_expense_path, class: 'btn btn-primary btn-large' %>
+
+<button id="import-button" class="btn btn-warning btn-large" data-toggle="modal" data-target="#import-modal">Import Expenses</button>
+
+
 
 
 <%= render 'modals' %>

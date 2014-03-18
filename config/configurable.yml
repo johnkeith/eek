@@ -5,8 +5,8 @@
 #   
 site_title:
   name: Site Title
-  type: string
-  default: EEK! (Easy Expense Keeper)
+  type: text
+  default: EEK! (Easy Expense Keeper) App
 
 total_budget:
   name: Total Budget

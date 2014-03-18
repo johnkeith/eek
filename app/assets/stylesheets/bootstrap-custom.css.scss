@@ -1,5 +1,11 @@
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+// on homepage title
+@import url(http://fonts.googleapis.com/css?family=Damion);
+
 // Core variables and mixins
-@import 'custom-variables';
+@import "custom-variables";
 @import "bootstrap/mixins";
 
 // Reset
@@ -47,3 +53,6 @@
 // Utility classes
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
+
+//Custom overrides
+@import "custom-overrides";
