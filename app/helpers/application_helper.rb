@@ -6,6 +6,5 @@ module ApplicationHelper
     css_class = column == sort_column ? "fa fa-caret-#{font_awesome_direction}" : nil
     link_to title, {:sort => column, :direction => direction}, {class: css_class}
   end
-
 end
 
