@@ -3,7 +3,10 @@ TrackExpenses::Application.routes.draw do
   authenticated :user do
     root :to => 'expenses#index', :as => "authenticated_root"
   end  
-  root :to => 'welcome#home'
+
+  devise_scope :user do
+    root :to => 'devise/sessions#new'
+  end
   
   devise_for :users, controllers: { registrations: 'registrations' }
   
@@ -12,14 +15,11 @@ TrackExpenses::Application.routes.draw do
 
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
 
-  resources :users do
-    collection { post :disallow_sign_up }
-  end
+  resources :users
 
   resources :expenses do
     collection do
       post :import
-      post :change_budget_total
       post :dashboard
     end
   end

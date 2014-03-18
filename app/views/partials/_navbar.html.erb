@@ -7,26 +7,29 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><%= "#{Configurable.site_title}" %></a>
+     <a class="navbar-brand" href="/"><%= "#{Configurable.site_title}" %></a>
   </div>
 
 	  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse">
-    <ul class="nav navbar-nav navbar-right">
-    	<% if user_signed_in? %>
-        
-        <% if current_user.admin? %>
-          <li><%= link_to "Administrative Settings", admin_configurable_path %> 
-          <li><%= link_to "User Account Settings", users_index_path %></li>
+   
+  <div class="visible-xs">
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+      	<% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li><%= link_to "Administrative Settings", admin_configurable_path %> 
+            <li><%= link_to "User Account Settings", users_index_path %></li>
+          <% end %>
+          <li><%= link_to "New expense", new_expense_path %></li>
+          <li><%= link_to 'Show all expenses', expenses_path %></li>
+          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+        	<li><%= link_to "Create account", new_user_registration_path %></li>
+        	<li><%= link_to "Sign in", new_user_session_path %></li>
         <% end %>
-        <li><%= link_to "New expense", new_expense_path %></li>
-        <li><%= link_to 'Show all expenses', expenses_path %></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-      <% else %>
-      	<li><%= link_to "Create account", new_user_registration_path %></li>
-      	<li><%= link_to "Sign in", new_user_session_path %></li>
-      <% end %>
-    </ul>
-	</div>
+      </ul>
+      </div>
+    </div>
+  </div>
 </nav>
-	
+

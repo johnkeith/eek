@@ -13,5 +13,80 @@ input.btn {
   margin-top:10px;
 }
 
+.container {
+	width:100%;
+}
+/* Sidebar navigation */
+.sidebar {
+	position: fixed;
+	top: 0px;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	display: block;
+	padding: 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+ 	background-color: #fff;
+  border-right: 1px solid #eee;
+  }
+.nav-sidebar {
+  margin-right: -20px; 
+  margin-bottom: 20px;
+  margin-left: -20px;
+  margin-top: 15px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  &:hover {
+  	color:#fff;
+		background-color:#428bca;
+  }
+}
+.nav-sidebar > .active > a {
+  color: #fff;
+  background-color: #428bca;
+}
+.sidebar-brand {
+	font-weight:bold;
+}
+.btn-sidebar{
+	position: fixed;
+	top: 0px;
+	bottom: 0;
+	left: 0;
+	z-index: 2000;
+	background-color:#000;
+	color:white;
+}
 
-// This is for the welcome/home page and the title
+// Top navbar
+.navbar-inverse {
+	background-color: #000;
+	border-color: #eee;
+}
+.navbar-brand {
+	text-align:center;
+	margin:0 auto;
+}
+.navbar-fixed-top {
+	top: 0;
+	border-width: 0 0 1px;
+}
+.container {
+	padding:0;
+}
+.btn-bottom-links {
+	margin-top:25px;
+}
+@media (min-width: 768px) {
+	.container {
+	padding:15px 30px 30px 30px;
+	}
+}
+@media (max-width: 992px) {
+	.visible-nine-nine-two {
+		display:block !important;
+	}
+}

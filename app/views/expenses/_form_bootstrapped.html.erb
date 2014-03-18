@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-6">
+<%= form_for(@expense) do |f| %>
+  <% if @expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+      <% @expense.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :user_id %>
+  <div class="form-group">
+    <%= f.label :date %><br>
+    <%= f.text_field :date, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :reseller %><br>
+    <%= f.text_field :reseller, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :item_or_service %><br>
+    <%= f.text_field :item_or_service, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :payment_form %><br>
+    <%= f.text_field :payment_form, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :charged_to %><br>
+    <%= f.text_field :charged_to, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :amount_from_budget %><br>
+    <%= f.text_field :amount_from_budget, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :document %><br>
+    <%= f.file_field :document, class: "btn btn-default" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create Expense", class: "btn btn-success" %>
+  </div>
+<% end %>
+</div>
+</div>
