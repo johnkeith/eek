@@ -12,18 +12,12 @@
 		<div class="">
 			<%= render 'partials/navbar' %>
 		</div>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				
-				<div class="col-lg-2 col-md-3 hidden-xs hidden-sm sidebar">
-					<%= render 'partials/sidebar_dashboard' %>
-				</div>
-
-				<div class="col-lg-10 col-lg-offset-2 col-md-9 col-md-offset-3">
+				<div class="col-lg-10 col-lg-offset-1">
 					<%= render 'partials/alerts_notices' %>
 					<%= yield %>
 				</div>
-			
 			</div>
 		</div>
 	</div>

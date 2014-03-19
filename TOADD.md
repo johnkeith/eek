@@ -16,6 +16,9 @@ Add methods to allow admin to set global variables (total budget, allow new user
 Also add name variable - something to call the site DONE
 
 Create dashboard, add overall styling
+--http://www.chartjs.org/docs/
+
+
 
 4) Exporting data to CSV
 

@@ -104,7 +104,13 @@ input.btn {
 }
 .bg-warning {
 	padding:10px;
-	width:50%;
+	max-width:300px;
+}
+.expenses-show-content {
+	max-width:800px;
+}
+.expenses-actions {
+	padding:0 9px 0 9px;
 }
 @media (min-width: 768px) {
 	.container {

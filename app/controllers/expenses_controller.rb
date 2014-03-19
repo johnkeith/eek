@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  layout 'col-md-8-offset-md-2', only: [:new, :edit, :show]
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
   helper_method :sort_column, :sort_direction
@@ -70,11 +71,6 @@ class ExpensesController < ApplicationController
   end
 
   def dashboard
-  end
-
-  def change_budget_total
-    Expense.budget_total = params[:total]
-    redirect_to dashboard_index_path
   end
 
   private
