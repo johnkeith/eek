@@ -8,14 +8,14 @@
 		<div>Welcome! You are the first user of this app and so we are going to make you the administrator.</div>
 	<% end %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div class="form-group"><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true, class: "form-control"  %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div class="form-group"><%= f.label :password %><br />
+  <%= f.password_field :password, class: "form-control"  %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div class="form-group"><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, class: "form-control"  %></div>
 
   <div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
 <% end %>

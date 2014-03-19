@@ -34,8 +34,8 @@ input.btn {
 	padding: 20px;
 	overflow-x: hidden;
 	overflow-y: auto;
- 	background-color: #fff;
-  border-right: 1px solid #eee;
+ 	background-color: #181D26;
+  border-right: 1px solid #fff;
   }
 .nav-sidebar {
   margin-right: -20px; 
@@ -44,11 +44,12 @@ input.btn {
   margin-top: 15px;
 }
 .nav-sidebar > li > a {
+  color:lighten(#000, 93.5%);
   padding-right: 20px;
   padding-left: 20px;
   &:hover {
   	color:#fff;
-		background-color:#428bca;
+		background-color:#6AB0A3;
   }
 }
 .nav-sidebar > .active > a {
