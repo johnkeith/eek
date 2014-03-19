@@ -1,0 +1,10 @@
+<div id="notices-alerts">
+	<% [:notice, :alert].each do |key| %>
+		<% if flash[key] %>
+			<div class="<%= key %> bg-warning">
+				<%= flash[key] %>
+				<button type="button" class="close">×</button>
+			</div>
+		<% end %>
+	<% end %>
+<div>

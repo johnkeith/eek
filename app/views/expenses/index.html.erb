@@ -32,6 +32,12 @@
 </table>
 
   <%= will_paginate %>
+  <div class="action-buttons-inline">
+    <ul class="list-inline">
+      <li><%= link_to 'New Expense', new_expense_path, class: 'btn btn-primary' %></li>
+      <li><a href="#" id="import-button" class="btn btn-warning" data-toggle="modal" data-target="#import-modal"><i class="fa fa-external-link-square"></i> Import Expenses</a></li>
+    </ul>
+  </div>
 <br>
 
 <p><%= "The total amount spend from budget so far is $#{Expense.sum(:amount_from_budget)}" %></p>
@@ -39,7 +45,5 @@
 <p><%= "The total budget for this year is $#{Configurable.total_budget}." %></p>
 
 <p><%= "This means, we have $#{Configurable.total_budget.to_f - Expense.sum(:amount_from_budget)} left to spend!" %></p>
-
-<%= link_to 'New Expense', new_expense_path, class: 'btn btn-primary btn-large' %>
 
 <%= render 'partials/modals' %>

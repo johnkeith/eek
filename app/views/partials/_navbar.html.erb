@@ -15,18 +15,36 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-      	<% if user_signed_in? %>
-          <% if current_user.admin? %>
-            <li><%= link_to "Administrative Settings", admin_configurable_path %> 
-            <li><%= link_to "User Account Settings", users_index_path %></li>
+        <li>
+          <%= link_to new_expense_path do %>
+            <i class="fa fa-plus-square-o"></i>
+            <span>Add New Expense</span>
           <% end %>
-          <li><%= link_to "New expense", new_expense_path %></li>
-          <li><%= link_to 'Show all expenses', expenses_path %></li>
-          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-        <% else %>
-        	<li><%= link_to "Create account", new_user_registration_path %></li>
-        	<li><%= link_to "Sign in", new_user_session_path %></li>
+        </li>
+     
+        <li>
+          <%= link_to expenses_path do %>
+              <i class="fa fa-list"></i>
+              <span>Show All Expenses</span>
+          <% end %>
+        </li>
+
+        <% if current_user.admin? %>
+          <li> 
+            <%= link_to admin_configurable_path do %>
+              <i class="fa fa-cogs"></i>
+              <span>Administrative Settings</span>
+            <% end %>
+          </li> 
+          <li>
+            <%= link_to users_index_path do %>
+              <i class="fa fa-users"></i>
+              <span>User Account Settings</span>
+            <% end %>
+          </li>
         <% end %>
+
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
       </ul>
       </div>
     </div>
