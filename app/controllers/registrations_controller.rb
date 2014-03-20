@@ -7,7 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
 		if User.count == 1 
     	admin_configurable_path
     else
-    	dashboard_expenses_path
+    	expenses_path
     end
   end
 end
