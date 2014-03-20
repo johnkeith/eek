@@ -1,4 +1,6 @@
-<h1>Listing expenses</h1>
+<div class="inline">
+  <h1>Listing expenses<p class="pull-right inline-above-table well hidden-sm hidden-xs"><%= "There is $#{number_with_precision(Configurable.total_budget.to_f - Expense.sum(:amount_from_budget), precision: 2)} left in the budget." %></p></h1>
+</div>
 
 <table class="table table-striped">
   <thead>
@@ -16,13 +18,13 @@
   <tbody>
     <% @expenses.each do |expense| %>
       <tr>
-        <td><%= expense.date %></td>
+        <td><%= link_to "#{expense.date}", expense %></td>
         <td class="visible-md visible-lg"><%= expense.reseller %></td>
         <td><%= expense.item_or_service %></td>
         <td class="visible-md visible-lg"><%= expense.payment_form %></td>
         <td class="visible-md visible-lg"><%= expense.charged_to %></td>
-        <td><%= expense.cost %></td>
-        <td class="visible-md visible-lg"><%= expense.amount_from_budget %></td>
+        <td><%= "\$#{number_with_precision(expense.cost, precision: 2)}" %></td>
+        <td class="visible-md visible-lg"><%= "\$#{number_with_precision(expense.amount_from_budget, precision: 2)}" %></td>
         <td class="visible-lg"><%= link_to 'Show', expense %></td>
         <td class="visible-lg"><%= link_to 'Edit', edit_expense_path(expense) %></td>
         <td class="visible-lg"><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -42,10 +44,6 @@
   </div>
 <br>
 
-<p><%= "The total amount spend from budget so far is $#{Expense.sum(:amount_from_budget)}" %></p>
-
-<p><%= "The total budget for this year is $#{Configurable.total_budget}." %></p>
-
-<p><%= "This means, we have $#{Configurable.total_budget.to_f - Expense.sum(:amount_from_budget)} left to spend!" %></p>
+<p class="below-table-well well visible-sm visible-xs"><%= "There is $#{number_with_precision(Configurable.total_budget.to_f - Expense.sum(:amount_from_budget), precision: 2)} left in the budget." %></p>
 
 <%= render 'partials/modals' %>
