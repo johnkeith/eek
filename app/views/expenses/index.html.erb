@@ -35,7 +35,9 @@
   <div class="action-buttons-inline">
     <ul class="list-inline">
       <li><%= link_to 'New Expense', new_expense_path, class: 'btn btn-primary' %></li>
-      <li><a href="#" id="import-button" class="btn btn-warning" data-toggle="modal" data-target="#import-modal"><i class="fa fa-external-link-square"></i> Import Expenses</a></li>
+      <% if current_user.admin? %>
+        <li><a href="#" id="import-button" class="btn btn-warning" data-toggle="modal" data-target="#import-modal"><i class="fa fa-external-link-square"></i> Import Expenses</a></li>
+      <% end %>
     </ul>
   </div>
 <br>
