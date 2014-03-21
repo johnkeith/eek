@@ -6,9 +6,10 @@
         <h2 class="modal-title">Import Expenses</h2>
       </div>
       <div class="modal-body">
+        <p>If you would like to import expenses from a CSV file, please format your file with the following column headers: <strong>Date, Reseller, Item Or Service, Payment Form, Charged To, Cost, Amount From Budget</strong>. Right now, you may only import using a properly formatted CSV file.</p>
         <%= form_tag import_expenses_path, multipart: true do %>
-          <%= file_field_tag :file %>
-          <%= submit_tag "Import" %>
+          <%= file_field_tag :file, class: "btn btn-default" %>
+          <%= submit_tag "Import", class: "btn btn-success" %>
         <% end %>
       </div>
     </div>
